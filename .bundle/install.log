@@ -1,0 +1,10 @@
+# Logfile created on 2014-01-30 15:10:45 -0800 by logger.rb/44203
+I, [2014-01-30T15:10:45.728356 #15741]  INFO -- : 0:  columnize (0.3.6) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/columnize-0.3.6.gemspec
+I, [2014-01-30T15:10:45.729292 #15741]  INFO -- : 0:  debugger-linecache (1.2.0) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/debugger-linecache-1.2.0.gemspec
+I, [2014-01-30T15:10:45.730027 #15741]  INFO -- : 0:  byebug (2.5.0) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/byebug-2.5.0.gemspec
+I, [2014-01-30T15:10:45.730710 #15741]  INFO -- : 0:  coderay (1.1.0) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-01-30T15:10:45.731371 #15741]  INFO -- : 0:  method_source (0.8.2) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-01-30T15:10:45.731973 #15741]  INFO -- : 0:  slop (3.4.7) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/slop-3.4.7.gemspec
+I, [2014-01-30T15:10:46.882703 #15741]  INFO -- : 0:  pry (0.9.12.6) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/pry-0.9.12.6.gemspec
+I, [2014-01-30T15:10:46.883497 #15741]  INFO -- : 0:  pry-byebug (1.2.1) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/pry-byebug-1.2.1.gemspec
+I, [2014-01-30T15:10:46.884006 #15741]  INFO -- : 0:  bundler (1.5.1) from /home/vagrant/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/specifications/bundler-1.5.1.gemspec
