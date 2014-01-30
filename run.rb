@@ -1,12 +1,15 @@
 require 'pry'
 require 'csv'
+require 'bigdecimal'
 
 class LineItem
-  ATTRS = [:Application, :Cluster, :DataType, :Environment, :Name, :Node, :Role, :Service]
+
   @values = {}
+  ATTRS = [:Application, :Cluster, :DataType, :Environment, :Name, :Node, :Role, :Service]
 
   ATTRS.each do |attr|
     attr_accessor attr
+    @values[attr] = {}
   end
 
   attr_accessor :dollar_amount
@@ -16,17 +19,21 @@ class LineItem
     ATTRS.each do |attr|
       self.send("#{attr}=", array[index])
     end
-    @dollar_amount = array[20]
+    @dollar_amount = BigDecimal.new(array[20])
   end
 
   def save_to_class
-    binding.pry
     ATTRS.each do |attr|
-      self.class.values[attr][self.attr] += dollar_amount
+      unless send(attr).nil? || (dollar_amount == 0)
+        self.class.values[attr][send(attr)] ||= BigDecimal.new('0')
+        self.class.values[attr][send(attr)] += dollar_amount
+      end
     end
   end
 
   class << self
+
+    attr_accessor :values
 
     ATTRS.each do |attr|
       attr_accessor attr
@@ -34,12 +41,15 @@ class LineItem
     
   end
 end
-binding.pry
 FILE = 'detailed-line-items-2013-05.csv'
 item = LineItem.new
+not_header = false
 CSV.foreach(FILE) do |array|
-  item.load(array)
-  item.save_to_class
+  if not_header 
+    item.load(array)
+    item.save_to_class
+  end
+  not_header ||= true
 end
 binding.pry
 
