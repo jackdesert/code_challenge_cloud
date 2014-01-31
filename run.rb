@@ -51,5 +51,16 @@ CSV.foreach(FILE) do |array|
   end
   not_header ||= true
 end
+
 binding.pry
+def report
+  o = "Report"
+  LineItem.values.each_pair do |attr, tag_hash|
+    o += "\n\nBy #{attr}:\n"
+    tag_hash.each_pair do |tag, value|
+      o += "  #{tag}:  $#{value.truncate(2).to_s('F')}\n"
+    end
+  end
+  puts o
+end
 
