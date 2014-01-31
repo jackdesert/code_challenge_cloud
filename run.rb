@@ -6,6 +6,7 @@ class LineItem
 
   @values = {}
   ATTRS = [:Application, :Cluster, :DataType, :Environment, :Name, :Node, :Role, :Service]
+  CSV_OFFSET = 22
 
   ATTRS.each do |attr|
     attr_accessor attr
@@ -15,9 +16,8 @@ class LineItem
   attr_accessor :dollar_amount
 
   def load(array)
-    index = 22
-    ATTRS.each do |attr|
-      self.send("#{attr}=", array[index])
+    ATTRS.each_with_index do |attr, index|
+      self.send("#{attr}=", array[index + CSV_OFFSET])
     end
     @dollar_amount = BigDecimal.new(array[20])
   end
