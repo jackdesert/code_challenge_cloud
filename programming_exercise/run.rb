@@ -44,7 +44,7 @@ class LineItem
     end
 
     def cost_report
-      o = "\n\n#{'=' * 21}nDAILY SPENDING REPORT\n#{'-' * 21}"
+      o = "\n\n#{'=' * 21}\nDAILY SPENDING REPORT\n#{'-' * 21}"
       values.each_pair do |attr, tag_hash|
         o += "\n\nBy #{attr}:\n"
         tag_hash.each_pair do |tag, value|
@@ -57,6 +57,7 @@ class LineItem
 
     def instance_types_report
       instance_types.delete('')
+      puts 'INSTANCES'
       puts "There are #{instance_types.length} unique instance types:"
       instance_types.each_pair do |type, true_value|
         puts "  #{type.gsub(/\(|\)/, '')}"
