@@ -114,14 +114,15 @@ How much data total in the key-value stores?
 71.5 billion bytes (approx 70 GB)
 (13 bytes/key) * (1.5 + 2.0 + 2.0) billion 
 
-So between the three stores, there could easily be 70 GB of data. This data is not normalized, but by not normalizing it we save read time later. And it is possible there may be more data than that, depending on what percentage of visitors are unique. Therefore I have chosen a drive-based key value store. 
+So between the three stores, there could easily be 70 GB of data. This data is not normalized, but by not normalizing it we save read time later. And it is possible there may be more data than that, depending on what percentage of visitors are unique. Therefore I have chosen a drive-based (as opposed to an in-memory) key value store. 
 
-MongoDB
--------
+Cassandra
+---------
 
-Intended to house approximately 70GB of data between three different stores. That can easily fit onto a single solid state drive for faster performance.
+Cassandra was chosen to be the key-value store because it writes fast. A cluster of three is recommended to maintain high-availability. And it will run on two SSDs--a small one (128GB is fine) for the  CommitLogDirectory (unwritten data) and a larger one (512 GB) for the DataFileDirectories (written data). 
 
-One slave was added to the system for higher availability, and because we did not need all 16 server cores for parsers.
+With a three-node cassandra cluster using 3 of the server cores, that leaves 13 to run parsers.
+
 
 Final Reporting (Done after all log files are processed and loaded into the key-value stores)
 ---------------------------------------------------------------------------------------------
@@ -130,10 +131,11 @@ To find how many unique users per hour, you just need a count of how many keys t
 
 To find which users visited twice or more in one day, you just need to print all the keys of DAILY_REPEATS.
 
+
 Server Hardware
 ---------------
 
-This is meant to be run on a single 16-core server with a 512GB SSD and a 2TB HDD. Since all the data can be processed on a single machine, this has meant there was no need to figure in network latency when talking to the database servers. With two mongo processes (master and slave), the controller is meant to fire up 14 parsers at a time to make use of all the processors.
+This is meant to be run on a single 16-core server with a 128GB SSD, a 512GB SSD, and a 2TB HDD for storage. Since all the data can be processed on a single machine, this has meant there was no need to figure in network latency when talking to the database servers. With three cassandra nodes, the controller is meant to fire up 13 parsers at a time to make use of all the processors.
 
 
 
