@@ -3,6 +3,7 @@ Programming Solution
 
 The Challenge
 -------------
+
 Using the attached files (which may be many GB in size):
 
 Using any tool, technology, and technique that you find relevant and are comfortable with, develop an app (or apps) that does the following:
@@ -12,15 +13,14 @@ Bonus points:
   Find instances that changed tags during the month, and the timestamp on which they changed.
 
 With each solution, please include a README file that has the following info.
-How to run the application against a file.
-Any notes about approach that you think are relevant and tradeoffs you made
-in your solution.
-For the algorithms you implement, the time and space complexity in Big-O
-notation
-Which constraint (time v. space) you optimized for and why.
-Bonus points:
-For the algorithms you implement, the best- and worst-case
-runtime complexity and the scenarios under which they occur.
+
+ * How to run the application against a file.
+ * Any notes about approach that you think are relevant and tradeoffs you made in your solution.
+ * For the algorithms you implement, the time and space complexity in Big-O notation
+ * Which constraint (time v. space) you optimized for and why.
+ * Bonus points:
+ * For the algorithms you implement, the best- and worst-case
+ * runtime complexity and the scenarios under which they occur.
 
 
 
@@ -55,14 +55,25 @@ To count the unique types of EC2 instances, a similar approach of saving the str
 ### Time Complexity
 The average time complexity is O(n), meaning a file with twice as many lines will take twice as much time to process.
 The worst-case time complexity is also O(n), as the number of operations per line in the csv file is constant, even in the case where all tag values are unique.
+The best-case time complexity is also O(n), as the number of operations per line in the csv file is constant, even in the case where all tag values are the same.
 
 
 ### Space Complexity
 The average space complexity is O(1), since a longer csv file will not necessarily require any additional storage. 
-The worst-case space complexity is O(n). In the case of hosting costs, this occurs when each tag value is unique and thus requires a new key/value pair in LineItem.values. In the case of counting the unique types of EC2 instances, worst-case occurs when each EC2 instance is of a different type, requiring a new key/value pair in LineItem.instance_types. 
+The worst-case space complexity is O(n). In the case of hosting costs, this occurs when each tag value is unique and thus requires a new key/value pair in LineItem.values. In the case of counting the unique types of EC2 instances, worst-case space complexity occurs when each EC2 instance is of a different type, requiring a new key/value pair in LineItem.instance_types. 
 
 ### Optimization
-Obviously, both of these problems were solved using an algorithm that optimized for space. Given that we do not know exactly how large these files may become (it was suggested that they may by many Gigabytes), it did not make sense to use any algorithm that required the entire data set to be stored in memory all at the same time. To do so could have run the machine out of memory. The speed that we give up by optimizing for space is only lost in how fast we can access data from the input file, given that we can only accept it one line at a time, and that speed is largely dependent on the implementation of I/O buffering by the CSV library. 
+Obviously, both of these problems were solved using an algorithm that optimized for space. Given that we do not know exactly how large these files may be (it was suggested that they may by many Gigabytes), it did not make sense to use any algorithm that required the entire data set to be stored in memory all at the same time. To do so could have run the machine out of memory. The speed that we give up by optimizing for space is only lost in how fast we can access data from the input file, given that we can only accept it one line at a time, and that speed is largely dependent on the implementation of I/O buffering by the CSV library. 
+
+
+Sample Output
+-------------
+
+There is sample output from running against one of the sample files:
+
+  time ruby programming_exercise/run.rb  detailed-line-items-2013-03.csv
+
+Is presented in programming_exercise/example_output.txt
 
 
 

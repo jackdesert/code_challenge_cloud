@@ -1,0 +1,157 @@
+
+
+=====================
+DAILY SPENDING REPORT
+---------------------
+
+By Application:
+  Core:  $619.29
+  Fun:  $46.34
+  Testing:  $107.79
+  Strongbox:  $810.04
+  Analysis:  $89.4
+  Reporting:  $5276.03
+  Monitoring:  $18.43
+
+
+By Cluster:
+  Resque:  $200.94
+  Main:  $154.13
+  20130226.0:  $236.3
+  Usage:  $3467.05
+  OLAP:  $1808.98
+  Racetrack:  $95.01
+  20130302.0:  $91.84
+  20130307.0:  $83.78
+  Monitoring:  $18.41
+  20130313:  $105.2
+  20130318.0:  $51.66
+  20130320.2:  $75.56
+  20130320.1:  $59.1
+  20130325.0:  $4.17
+  20130325.1:  $43.1
+  20130328.0:  $59.28
+
+
+By DataType:
+  failures:  $0.29
+  Bills:  $401.9
+  ReservedInstanceReports:  $10.53
+
+
+By Environment:
+  production:  $4427.63
+  development:  $154.13
+  staging:  $2385.46
+  Production:  $0.29
+  stage:  $0.84
+  Shared:  $0.04
+  shared:  $0.02
+
+
+By Name:
+  production-core-redis-resque-001:  $20.97
+  development-fun-minecraft-main:  $44.65
+  staging-core-redis-resque:  $45.66
+  development-testing-jenkins-main:  $107.79
+  staging-strongbox-resque-20130226.0-003:  $29.76
+  production-strongbox-resque-20130226.0-001:  $29.36
+  production-strongbox-resque-20130226.0-003:  $29.33
+  staging-strongbox-resque-20130226.0-001:  $74.16
+  staging-strongbox-resque-20130226.0-002:  $73.68
+  production-analysis-mongodb-resque-001:  $89.4
+  staging-reporting-riak-usage-001:  $228.96
+  staging-reporting-riak-usage-003:  $207.36
+  production-reporting-riak-usage-005:  $356.65
+  production-reporting-riak-usage-001:  $356.65
+  production-reporting-riak-usage-004:  $356.65
+  production-reporting-riak-usage-002:  $356.66
+  production-reporting-riak-usage-003:  $356.65
+  staging-reporting-riak-usage-002:  $228.96
+  production-reporting-mysql-olap:  $835.76
+  staging-reporting-mysql-olap:  $598.26
+  staging-core-zookeeper-racetrack-002:  $14.87
+  staging-core-zookeeper-racetrack-001:  $14.86
+  production-core-zookeeper-racetrack-003:  $14.87
+  production-core-zookeeper-racetrack-002:  $14.87
+  production-core-zookeeper-racetrack-001:  $14.86
+  staging-core-zookeeper-racetrack-003:  $14.89
+  development-db-backup:  $3.72
+  production-strongbox-resque-20130302.0-001:  $32.07
+  production-strongbox-resque-20130302.0-002:  $31.45
+  production-strongbox-resque-20130302.0-003:  $28.32
+  development-statistics-001:  $0.04
+  shared-monitoring:  $0.02
+  :  $0.44
+  production-core-redis-resque-002:  $43.57
+  production-strongbox-resque-20130307.0-002:  $16.15
+  production-strongbox-resque-20130307.0-001:  $16.38
+  production-strongbox-resque-20130307.0-003:  $16.22
+  production-monitoring-statsd:  $9.62
+  staging-minitoring:  $2.53
+  staging-strongbox-resque-20130307.0-001:  $34.3
+  production-strongbox-resque-20130313-003:  $35.02
+  staging-strongbox-resque-20130307.0-003:  $0.48
+  production-strongbox-resque-20130313-001:  $34.92
+  production-strongbox-resque-20130313-002:  $35.25
+  staging-strongbox-resque-20130307.0-002:  $0.24
+  staging-monitoring:  $6.25
+  production-strongbox-resque-20130318.0-001:  $12.85
+  production-strongbox-resque-20130318.0-002:  $12.79
+  staging-strongbox-resque-20130318.0-003:  $0.48
+  staging-strongbox-resque-20130318.0-002:  $0.48
+  production-strongbox-resque-20130318.0-003:  $12.52
+  staging-strongbox-resque-20130318.0-001:  $12.53
+  production-strongbox-resque-20130320.2-001:  $25.1
+  production-strongbox-resque-20130320.2-003:  $25.33
+  production-strongbox-resque-20130320.2-002:  $25.12
+  staging-strongbox-resque-20130320.1-001:  $59.1
+  Default-Environment:  $0.02
+  production-strongbox-resque-20130325.0-003:  $1.47
+  production-strongbox-resque-20130325.0-002:  $1.47
+  production-strongbox-resque-20130325.0-001:  $1.22
+  production-strongbox-resque-20130325.1-001:  $14.51
+  production-strongbox-resque-20130325.1-003:  $14.23
+  production-strongbox-resque-20130325.1-002:  $14.35
+  production-strongbox-resque-20130328.0-001:  $19.86
+  production-strongbox-resque-20130328.0-002:  $19.63
+  production-strongbox-resque-20130328.0-003:  $19.78
+
+
+By Node:
+  1:  $1440.07
+  3:  $969.61
+  2:  $1218.87
+  5:  $457.62
+  4:  $458.63
+
+
+By Role:
+  Master:  $1318.51
+  master:  $598.26
+
+
+By Service:
+  Redis:  $111.74
+  Minecraft:  $46.34
+  Jenkins:  $107.79
+  Resque:  $810.04
+  MongoDB:  $89.4
+  Riak:  $3467.05
+  MySQL:  $1808.98
+  Zookeeper:  $95.01
+  statsd:  $18.41
+
+
+INSTANCES
+There are 8 unique instance types:
+  db.m1.large
+  m1.small
+  c1.medium
+  m1.large
+  m1.medium
+  m1.xlarge
+  m2.4xlarge
+  t1.micro
+
+
