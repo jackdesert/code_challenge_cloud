@@ -38,9 +38,20 @@ class LineItem
     ATTRS.each do |attr|
       attr_accessor attr
     end
-    
+
+    def report
+      o = "Report"
+      values.each_pair do |attr, tag_hash|
+        o += "\n\nBy #{attr}:\n"
+        tag_hash.each_pair do |tag, value|
+          o += "  #{tag}:  $#{value.truncate(2).to_s('F')}\n"
+        end
+      end
+      puts o
+    end
   end
 end
+   
 FILE = 'detailed-line-items-2013-05.csv'
 item = LineItem.new
 not_header = false
@@ -52,15 +63,6 @@ CSV.foreach(FILE) do |array|
   not_header ||= true
 end
 
-binding.pry
-def report
-  o = "Report"
-  LineItem.values.each_pair do |attr, tag_hash|
-    o += "\n\nBy #{attr}:\n"
-    tag_hash.each_pair do |tag, value|
-      o += "  #{tag}:  $#{value.truncate(2).to_s('F')}\n"
-    end
-  end
-  puts o
-end
+LineItem.report
+
 
